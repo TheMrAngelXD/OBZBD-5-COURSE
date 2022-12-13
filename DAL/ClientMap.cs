@@ -20,9 +20,9 @@ namespace DAL
             this.Map(x => x.Fullname).Not.Nullable().Length(255);
             this.Map(x => x.Address).Not.Nullable().Length(255);
             this.Map(x => x.Email).Not.Nullable().Length(255).Unique();
-            //this.HasMany(x => x.Order)
-                //.Cascade.Delete()
-                //.Not.Inverse();
+            this.HasManyToMany(x => x.Order)
+                .Cascade.Delete()
+                .Not.Inverse();
         }
     }
 }

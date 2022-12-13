@@ -38,13 +38,17 @@ namespace PhotoStudio
         protected Service()
         {
         }
+
         public virtual string NumService { get; }
+
         public virtual string NameService { get; }
 
         public virtual string Quantity { get; }
 
         public virtual string Price { get; }
+
         public virtual Guid Id { get; }
+
         public virtual ISet<Order> order { get; } = new HashSet<Order>();
 
         public override string ToString()

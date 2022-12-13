@@ -20,8 +20,8 @@ namespace DAL
             this.Map(x => x.NameService).Not.Nullable().Length(255);
             this.Map(x => x.Quantity).Not.Nullable().Length(255);
             this.Map(x => x.Price).Not.Nullable().Length(255).Unique();
-            //this.HasManyToMany(x => x.order)
-               //.Not.Inverse();
+            this.HasManyToMany(x => x.order)
+               .Inverse();
         }
     }
 }

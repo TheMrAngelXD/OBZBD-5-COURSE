@@ -22,7 +22,6 @@ public class OrdersTest
         var client1 = new Client(numClient, fullName, address, email);
         var order2 = new Order(numOrder, client1);
         //Asssert
-        Assert.Equal(order2.ToString(),temp);
         Assert.Equal(order2.ToString(), temp);
     }
 

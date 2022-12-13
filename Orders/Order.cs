@@ -10,6 +10,7 @@ namespace PhotoStudio
     {
 
         /// <summary>
+        /// Инициализирует новый экземпляр класса <see cref="Order"/>.
         /// Initializes a new instance of the <see cref="Order"/> class.
         /// </summary>
         /// <param name="id">Айди</param>
@@ -25,7 +26,6 @@ namespace PhotoStudio
             this.client = client;
             this.Id = Guid.NewGuid();
             this.service = service;
-
         }
 
         public virtual bool AddService(Service service)
@@ -37,13 +37,14 @@ namespace PhotoStudio
 
         public Order(string numOrder, params Client[] client)
             : this(numOrder, new HashSet<Client>(client))
-        { 
+        {
         }
 
         [Obsolete("For ORM only", true)]
         protected Order()
         {
         }
+
         public virtual string NumOrder { get; }
 
         public virtual ISet<Client> client { get; } = new HashSet<Client>();
@@ -54,7 +55,7 @@ namespace PhotoStudio
 
         public override string ToString()
         {
-            return $"{this.Id},{this.NumOrder},{string.Join(", ", this.client)}";
+            return $"{this.NumOrder},{string.Join(", ", this.client)}";
         }
     }
 }

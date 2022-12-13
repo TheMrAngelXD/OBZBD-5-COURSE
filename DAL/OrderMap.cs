@@ -18,9 +18,9 @@ namespace DAL
             this.Id(x => x.Id);
             this.Map(x => x.NumOrder).Not.Nullable().Length(255);
             //this.References(x => x.client);
-            //this.HasManyToMany(x => x.service)
-                //.Cascade.Delete()
-                //.Inverse();
+            this.HasManyToMany(x => x.service)
+                .Cascade.Delete()
+                .Not.Inverse();
         }
     }
 }

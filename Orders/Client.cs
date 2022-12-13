@@ -7,6 +7,7 @@ namespace PhotoStudio
     public class Client : IEquatable<Client>
     {
         /// <summary>
+        /// Инициализирует новый экземпляр класса <see cref="Client"/>.
         /// Initializes a new instance of the <see cref="Client"/> class.
         /// </summary>
         /// <param name="id">Id</param>
@@ -30,7 +31,7 @@ namespace PhotoStudio
             {
                 throw new ArgumentNullException(email);
             }
-            
+
             this.Id = Guid.NewGuid();
             this.NumClient = numClient;
             this.Fullname = fullName;
@@ -69,6 +70,7 @@ namespace PhotoStudio
         public virtual ISet<Order> Order { get; } = new HashSet<Order>();
 
         /// <summary>
+        /// Инициализирует новый экземпляр класса <see cref="Client"/>.
         /// Initializes a new instance of the <see cref="Client"/> class.
         /// </summary>
         [Obsolete("For ORM only", true)]
