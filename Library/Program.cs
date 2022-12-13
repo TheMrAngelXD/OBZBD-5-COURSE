@@ -22,10 +22,9 @@ using var sessionFactory = Configurator.GetSessionFactory(settings, showSql: tru
 
 using (var session = sessionFactory.OpenSession())
 {
-    // @NOTE: Порядок важен!
-    session.Save(orders);
     session.Save(clients);
     session.Save(services);
+    session.Save(orders);
 
     session.Flush();
 }
